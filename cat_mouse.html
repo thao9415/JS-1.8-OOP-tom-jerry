@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Mouse(name, weight, speed, status) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = status;
+        this.status = true;
+        this.say = function () {
+            return this.name + 'chit chit';
+        };
+        this.showStatus = function () {
+            if (this.status) {
+                alert(this.name + " is living");
+            } else {
+                alert(this.name + " is death")
+            }
+        }
+    }
+
+    function Cat(name, weight, speed) {
+        this.name = name;
+        this.weight = weight;
+        this.maxSpeed = speed;
+        this.say = function () {
+            return this.name + 'meo meo';
+        };
+        this.catchMouse = function () {
+            if (this.maxSpeed > jerry.speed)
+                return true;
+        };
+        this.eatMouse = function () {
+            if (this.catchMouse()) {
+                this.weight += jerry.weight;
+                jerry.status = false;
+                alert("Nhemmm nhemmm!!!!")
+            }
+        }
+
+    }
+
+    let jerry = new Mouse("Jerry", 10, 30);
+    let tom = new Cat("Tom", 30, 50);
+    tom.catchMouse();
+    tom.eatMouse();
+    jerry.showStatus();
+    let weightTom = tom.weight;
+    alert(weightTom);
+</script>
+</body>
+</html>
